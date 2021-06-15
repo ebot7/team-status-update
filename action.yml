@@ -16,7 +16,6 @@ runs:
   using: 'composite'
   steps:
     - name: Send curl to notify our team-status Slack channel
-      if: ${{ always() }}
       run: |
         curl -s -X POST ${{ inputs.curl-target }} \
           -H "Accept: application/json" \
