@@ -8,7 +8,9 @@ inputs:
   app-version:
     required: true
   context:
+    description: Additional context, provided as a JSON string.
     required: true
+    default: '{}'
   curl-target:
     required: true
     default: 'https://u5f3b9493c.execute-api.eu-central-1.amazonaws.com/Prod/test-run'
