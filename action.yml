@@ -1,0 +1,26 @@
+name: 'e-bot7 Team Status Update'
+description: 'Post a team update to our status endpoint'
+inputs:
+  team-name:
+    required: true
+  test-name:
+    required: true
+  app-version:
+    required: true
+  context:
+    required: true
+  curl-target:
+    required: true
+    default: 'https://u5f3b9493c.execute-api.eu-central-1.amazonaws.com/Prod/test-run'
+runs:
+  using: 'composite'
+  steps:
+    - name: Send curl to notify our team-status Slack channel
+      if: ${{ always() }}
+      run: |
+        curl -s -X POST ${{ inputs.curl-target }} \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/json" \
+          --data "{ \"team_name\": \"${{ inputs.team-name }}\", \"test_name\": \"${{ inputs.test-name }}\", \"app_version\": \"${{ inputs.app-version }}\", \"test_status\": \"$TEST_STATUS\", \"context\": ${{ inputs.context }} }"
+      env:
+        TEST_STATUS: ${{ job.status == 'Success' && 'success' || 'failure' }}
