@@ -3,7 +3,7 @@
 A simple Github action to update your Team Status for https://github.com/ebot7/bot-andy
 
 ## Usage
-Use the following step your Github workflow.
+Use the following as the last step in your Github workflow.
 
 ```
 - uses: ebot7/team-status-update@v0.1.4
