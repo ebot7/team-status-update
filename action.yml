@@ -7,6 +7,9 @@ inputs:
     required: true
   app-version:
     required: true
+  environment:
+    required: true
+    default: staging
   context:
     description: Additional context, provided as a JSON string.
     required: true
