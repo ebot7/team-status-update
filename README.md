@@ -7,7 +7,7 @@ Use the following as the last step in your Github workflow.
 
 ```
 - uses: ebot7/team-status-update@v0.1.5
-  if: ${{ always() }}
+  if: ${{ success() || failure() }}
   with:
     team-name: ap
     test-name: End-to-end tests
