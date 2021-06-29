@@ -25,7 +25,7 @@ runs:
         curl -s -X POST ${{ inputs.curl-target }} \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          --data "{ \"team_name\": \"${{ inputs.team-name }}\", \"test_name\": \"${{ inputs.test-name }}\", \"app_version\": \"${{ inputs.app-version }}\", \"test_status\": \"$TEST_STATUS\", \"context\": ${{ inputs.context }} }"
+          --data "{ \"team_name\": \"${{ inputs.team-name }}\", \"test_name\": \"${{ inputs.test-name }}\", \"app_version\": \"${{ inputs.app-version }}\", \"environment\": \"${{ inputs.environment }}\", \"test_status\": \"$TEST_STATUS\", \"context\": ${{ inputs.context }} }"
       shell: bash
       env:
         TEST_STATUS: ${{ job.status == 'Success' && 'success' || 'failure' }}
