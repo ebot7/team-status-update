@@ -6,7 +6,7 @@ A simple Github action to update your Team Status for https://github.com/ebot7/b
 Use the following as the last step in your Github workflow.
 
 ```
-- uses: ebot7/team-status-update@v0.1.5
+- uses: ebot7/team-status-update@master
   if: ${{ success() || failure() }}
   with:
     team-name: ap
