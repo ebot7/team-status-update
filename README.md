@@ -9,7 +9,7 @@ Use the following as the last step in your Github workflow.
 - uses: ebot7/team-status-update@master
   if: ${{ success() || failure() }}
   with:
-    team-name: ap
+    team-name: core
     test-name: End-to-end tests
     app-version: v1
 ```
