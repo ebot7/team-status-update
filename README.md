@@ -1,6 +1,6 @@
 # Team Status Update
 
-A simple Github action to update your Team Status for https://github.com/ebot7/bot-andy
+A simple Github action to update your Team Status for <https://github.com/ebot7/bot-andy>
 
 ## Usage
 Use the following as the last step in your Github workflow.
